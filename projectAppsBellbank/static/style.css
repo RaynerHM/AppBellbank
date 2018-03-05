@@ -1,0 +1,173 @@
+body {
+    background-color: white;
+}
+
+.fa-bars {
+    cursor: pointer;
+}
+
+
+/*----------------- Fromulario de Generacion de Codigo -----------------*/
+
+div.color {
+    color: gray;
+    text-align: center;
+}
+
+nav {
+    background-color: #6bbcf7;
+    padding: 0px 9px;
+    margin: 0px 10px 10px 0px;
+    height: 50px;
+}
+
+.box {
+    width: 80%;
+    margin: 60px auto;
+}
+
+.icono-menu {
+    margin: 5px 5px;
+    padding: 0px;
+    font-size: 40px;
+}
+
+.menu {
+    margin-left: -100%;
+    margin-top: 65px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    width: 210px;
+    height: 250px;
+}
+
+ul li a {
+    border-radius: 10px;
+    color: black;
+    height: 60px;
+}
+
+.iconos-pequeno {
+    margin-right: 0px;
+    padding: 0px 5px;
+    font-size: 25px;
+    height: 45px;
+    padding-left: 0px;
+}
+
+.side-nav li>a>i {
+    color: #fff;
+}
+
+.MostrarMenu {
+    margin-left: auto;
+}
+
+
+/*----------------- Fromulario Equipos -----------------*/
+
+.container {
+    text-align: center;
+    width: 100%;
+}
+
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 90%;
+    }
+}
+
+.btn {
+    text-transform: unset;
+    letter-spacing: 1px;
+    text-align: left;
+    background-color: #6bbcf7;
+    color: black;
+}
+
+.side-nav li>a.btn:hover {
+    background-color: #47d7ff
+}
+
+#link .btn {
+    text-decoration: none;
+    background-color: #fff;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    -webkit-transition: .2s ease-out;
+    transition: .2s ease-out;
+    cursor: pointer;
+    text-transform: unset;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    height: 120px;
+    width: 250px;
+    padding: 5px 5px;
+    margin: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.pointer {
+    cursor: default;
+    border-top: 1px;
+}
+
+.border_top {
+    border-top-color: #00000059;
+    border-top-width: 0.5px;
+    border-top-style: solid;
+    padding-left: 10px;
+}
+
+.arriba {
+    height: 120px;
+    background-color: #fff;
+    margin-top: -70px;
+    color: black;
+}
+
+.abajo {
+    height: 45px;
+    background-color: #fff;
+    margin-top: 3px;
+    color: black;
+}
+
+#link i {
+    width: 40px;
+    margin: 0px;
+    padding-left: 20px;
+}
+
+.active-btn {
+    background-color: #0076b7;
+}
+
+.side-nav li>a.btn {
+    margin: 5px 10px;
+}
+
+
+/*---------- Efecto Zoom----------*/
+
+li {
+    -webkit-transform: scale(1, 1);
+    -webkit-transform-timing-function: ease-out;
+    -webkit-transform-duration: 250ms;
+    -moz-transform: scale(1, 1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+}
+
+li:hover {
+    -webkit-transform: scale(1.30, 1.40);
+    -webkit-transform-timing-function: ease-out;
+    -webkit-transform-duration: 100ms;
+    -moz-transform: scale(1.12, 1.12);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 100ms;
+}
