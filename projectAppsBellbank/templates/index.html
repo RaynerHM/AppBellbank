@@ -24,8 +24,8 @@
             <span class="left brand-logo text-darken-2">
               <i onclick="Materialize.showStaggeredList('#slide-out')" id="btnMenu" data-activates="slide-out" class=" deslizar icono-menu fa fa-bars fa-2x "></i>
           </span>
-            <!--            <h5 class="center-align"><span class="hide-on-small-only">APLICACIONES</span> BELLBANK</h5> -->
-            <h5 class="center-align"><span class="hide-on-small-only">APLICACIONES</span> </h5>
+            <h5 class="center-align"><span class="hide-on-small-only">APLICACIONES</span> BELLBANK</h5> 
+            <!-- <h5 class="center-align"><span class="hide-on-small-only">APLICACIONES</span> </h5> -->
         </nav>
     </div>
 
@@ -36,7 +36,7 @@
         <li class=" ">
             <a href="/" class="active-btn btn"><i class="iconos-pequeno fa fa-home fa-1x" ></i> Inicio</a>
         </li>
-        <li>
+       <!--  <li>
             <a href="/persona" class="btn"><i class="iconos-pequeno fa fa-user fa-1x" ></i> Agregar Personas </a>
         </li>
         <li class=" ">
@@ -50,21 +50,25 @@
         </li>
         <li class=" ">
             <a href="" class="btn"><i class="iconos-pequeno fa fa-power-off fa-1x" ></i> Cerrar Sección</a>
-        </li>
+        </li> -->
     </ul>
 
-    <div class="container">
-        <div class="col m12 s12 x12">
+    <div class="ancho">
+        <div class="col m12 s12 x12 ancho">
             <ul id="link">
                 {% for r in resultado %}
                 <li class="btn">
                     <a href=" {{ r.enlace }}">
-                        <div>
-                            <img src="{% static 'Udemy.png' %} " alt="" style="width:100px;">
+                        <div class="image" >
+                            <img src="{% static 'logo.jpg' %} " alt="" style="width:70px;">
+                                {{ r.nombre }}                        
                         </div>
                     </a>
-                    <div class="pointer border_top" id="arriba">{{ r.nombre }}
-                        <i id="informacion" class=" right iconos-pequeno fa fa fa-info fa-3x"></i>
+                    <div id="informacion" class="border_top"> 
+                            <p> {{ r.descripcion }}</p>
+                            <!-- <i  class=" right iconos-pequeno fa fa fa-info fa-3x"></i> -->
+                        <div class="pointer as" id="arriba">
+                        </div>
                     </div>
                 </li>
                 {% endfor %}
@@ -76,13 +80,3 @@
     <script src="{% static '/materialize/js/materialize.min.js' %}"></script>
     <script src="{% static '/style.js' %}"></script>
 </body>
-
-<!--
-    Zimbra
-    IntraBell
-    CRM
-    Inventario
-    Bellbanking
-    OTRS
-    BellNomina
- -->

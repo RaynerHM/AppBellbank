@@ -74,7 +74,7 @@ ul li a {
 
 @media only screen and (min-width: 993px) {
     .container {
-        width: 90%;
+        width: 100%;
     }
 }
 
@@ -117,17 +117,31 @@ ul li a {
 }
 
 .border_top {
-    border-top-color: #00000059;
+    //border-top-color: #000059;
     border-top-width: 0.5px;
-    border-top-style: solid;
-    padding-left: 10px;
-}
+    border-top-style: groove;
+    padding-left: 5px;
+    width: 100%;
 
+}
+.as{
+    display: none;
+
+}
+.image{
+    text-align: left;
+}
+img{
+    text-align: right;
+}
 .arriba {
     height: 120px;
     background-color: #fff;
     margin-top: -70px;
     color: black;
+    display: inline-block;
+    width: 100%;
+
 }
 
 .abajo {
@@ -138,9 +152,10 @@ ul li a {
 }
 
 #link i {
-    width: 40px;
+    //width: 40px;
     margin: 0px;
     padding-left: 20px;
+    cursor: pointer;
 }
 
 .active-btn {
@@ -170,4 +185,14 @@ li:hover {
     -moz-transform: scale(1.12, 1.12);
     -moz-transition-timing-function: ease-out;
     -moz-transition-duration: 100ms;
+}
+
+.ancho{
+    width: 100%;
+    text-align: center;
+}
+p{
+    line-height: normal;
+    font-weight: normal;
+    font-size: 11px;
 }

@@ -3,11 +3,11 @@ from django.shortcuts import render
 from .forms import FormIndex
 
 from django.contrib.auth.models import User
-from .models import Enlace
+from .models import EnlaceCursos, EnlaceBellbank
 
 #-- --------------------- Vista Generar Codigo --------------------- -->
 def index(request):
-	resultado = Enlace.objects.all()
+	resultado = EnlaceBellbank.objects.all()
 	# print(resultado)
 	return render(request, "index.html", {'resultado': resultado})
 	#return render(request, "index.html")
@@ -21,7 +21,7 @@ def Modificar(request):
 		v_descripcion = form_data.get('descripcion')
 		v_logo = form_data.get('logo')
 
-		obj = Enlace.objects.create(nombre=v_nombre,
+		obj = EnlaceBellbank.objects.create(nombre=v_nombre,
 		                            enlace=v_enlace, 
                                     descripcion=v_descripcion, 
 		                            logo=v_logo
