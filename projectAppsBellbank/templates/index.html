@@ -29,29 +29,22 @@
         </nav>
     </div>
 
-    <ul id="slide-out" class="side-nav ">
-        <li>
-            <i class="iconos-pequeno prefix fa fa-user-o fa-2x"></i>
-        </li>
-        <li class=" ">
-            <a href="/" class="active-btn btn"><i class="iconos-pequeno fa fa-home fa-1x" ></i> Inicio</a>
-        </li>
-        <!--  <li>
-            <a href="/persona" class="btn"><i class="iconos-pequeno fa fa-user fa-1x" ></i> Agregar Personas </a>
-        </li>
-        <li class=" ">
-            <a href="/asignacion" class="btn"><i class="iconos-pequeno fa fa-desktop fa-1x" ></i> Equipos Asignados</a>
-        </li>
-        <li class=" ">
-            <a href="/password" class="btn"><i class="iconos-pequeno fa fa-key fa-1x" ></i> Cambiar Contraseña</a>
-        </li>
-        <li class=" ">
-            <a href="" class="btn"><i class="iconos-pequeno fa fa-cog fa-1x" ></i> Opciones</a>
-        </li>
-        <li class=" ">
-            <a href="" class="btn"><i class="iconos-pequeno fa fa-power-off fa-1x" ></i> Cerrar Sección</a>
-        </li> -->
-    </ul>
+    <form action="" method="POST">{% csrf_token %}
+        <ul id="slide-out" class="side-nav ">
+            <li>
+                <i class="iconos-pequeno prefix fa fa-user-o fa-2x"></i>
+            </li>
+            <li class=" " name="estado" value="En Produccion" type="submit">
+                <a href="/" class="active-btn btn"><i class="iconos-pequeno fa fa-home fa-1x" ></i> Mostrar Todas</a>
+            </li>
+             <li class=" ">
+                <a href="/" class="btn"><i class="iconos-pequeno fa fa-play fa-1x" ></i> Apps en Producción</a>
+            </li>
+            <li class=" ">
+                <a href="/" class="btn"><i class="iconos-pequeno fa fa-cogs fa-1x" ></i> Apps en QA</a>
+            </li>
+        </ul>
+    </form>
 
     <div class="ancho">
         <div class="col m12 s12 x12 ancho">

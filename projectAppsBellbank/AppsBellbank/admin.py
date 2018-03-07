@@ -1,16 +1,17 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import EnlaceCursos, EnlaceBellbank, Estados
+from .models import EnlaceCursos, EnlaceBellbank, Estados, Permisos
 
 class AdminEnlace(admin.ModelAdmin):
 	#list_display = ["__unicode__","nombre","timestamp"]
-	list_display = ["nombre","enlace","descripcion","logo",'estado']
+	list_display = ["nombre","enlace","descripcion","logo","estado","permiso"]
 
 	class Meta:
 		model = EnlaceBellbank
 
 admin.site.register(EnlaceBellbank, AdminEnlace)
+
 
 class AdminCursos(admin.ModelAdmin):
 	#list_display = ["__unicode__","nombre","timestamp"]
@@ -21,6 +22,7 @@ class AdminCursos(admin.ModelAdmin):
 
 admin.site.register(EnlaceCursos, AdminCursos)
 
+
 class AdminEstados(admin.ModelAdmin):
 	#list_display = ["__unicode__","nombre","timestamp"]
 	list_display = ["estado"]
@@ -29,3 +31,13 @@ class AdminEstados(admin.ModelAdmin):
 		model = Estados
 
 admin.site.register(Estados, AdminEstados)
+
+
+class AdminPermisos(admin.ModelAdmin):
+	#list_display = ["__unicode__","nombre","timestamp"]
+	list_display = ["permisos"]
+
+	class Meta:
+		model = Permisos
+
+admin.site.register(Permisos, AdminPermisos)

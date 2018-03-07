@@ -1,19 +1,87 @@
 from django.shortcuts import render
 
-from .forms import FormIndex, FormSysadmin
+from .forms import FormIndex, FormSysAdmin, FormSysadminQA, FormSysadminPRO
 
 from django.contrib.auth.models import User
-from .models import EnlaceCursos, EnlaceBellbank
+from .models import EnlaceBellbank
 
-#-- --------------------- Vista Generar Codigo --------------------- -->
+
+#-- --------------------- Vista General para Usuario --------------------- -->
 def Index(request):
 	# resultado = EnlaceBellbank.objects.all()
 	# return render(request, "index.html", {'resultado': resultado})
 #--------------------------------------------------------------------------------
-	# resultado = EnlaceBellbank.objects.filter(nombre="Zimbra")
-	resultado = EnlaceBellbank.objects.filter(estado__icontains="En QA")
-	# resultado = EnlaceBellbank.objects.all().filter(estado__icontains="En Produccion")
+	resultado = EnlaceBellbank.objects.filter(estado__estado='En Produccion').filter(permiso__permisos='Usuario')
 	return render(request, "index.html", {'resultado': resultado})
+
+
+
+#-- --------------------- Vista para Administrador --------------------- -->
+def IndexSysAdmin(request):
+	# resultado = EnlaceBellbank.objects.filter(estado__estado='En Produccion').filter(permiso__permisos='Administrador')
+	resultado = EnlaceBellbank.objects.all()
+	return render(request, "sysadmin.html", {'resultado': resultado})
+def IndexSysAdminQA(request):
+	# resultado = EnlaceBellbank.objects.filter(estado__estado='En Produccion').filter(permiso__permisos='Administrador')
+	resultado = EnlaceBellbank.objects.filter(estado__estado='En QA')
+	return render(request, "sysadmin.html", {'resultado': resultado})
+def IndexSysAdminPro(request):
+	# resultado = EnlaceBellbank.objects.filter(estado__estado='En Produccion').filter(permiso__permisos='Administrador')
+	resultado = EnlaceBellbank.objects.filter(estado__estado='En Produccion')
+	return render(request, "sysadmin.html", {'resultado': resultado})
+
+
+
+
+
+# def IndexSysAdmin(request):
+# 	form = FormSysAdmin(request.POST)
+# 	if form.is_valid():
+# 		form_data = form.cleaned_data
+# 		v_nombre = form_data.get("estado")
+# 		print(v_nombre)
+# 		resultado = EnlaceBellbank.objects.filter(estado__estado=v_nombre).filter(permiso__permisos='Administrador')
+# 		return render(request, "sysadmin.html", {"el_form": form}, resultado)
+# 	# context = {
+# 	# 	"el_form": form,
+# 	# }
+# 	# return render(request, "sysadmin.html", context)
+
+
+
+
+
+
+
+# def IndexSysAdmin(request):
+# 	form = FormSysAdmin(request.POST)
+# 	if form.is_valid():
+# 		form_data = form.cleaned_data
+# 		v_nombre = form_data.get("estado")
+
+# 		obj = EnlaceBellbank.objects.create(nombre=v_nombre,
+# 		                            enlace=v_enlace, 
+#                                     descripcion=v_descripcion, 
+# 		                            logo=v_logo
+# 		                            )
+# 	context = {
+# 		"el_form": form,
+# 	}
+# 	return render(request, "modificar.html", context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def Modificar(request):
@@ -35,8 +103,3 @@ def Modificar(request):
 	}
 	return render(request, "modificar.html", context)
 
-def Sysadmin(request):
-	resultado = EnlaceBellbank.objects.all()
-	# print(resultado)
-	return render(request, "sysadmin.html", {'resultado': resultado})
-	#return render(request, "index.html")

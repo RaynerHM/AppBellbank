@@ -4,7 +4,12 @@ from django.db import models
 class Estados(models.Model):
 	estado = models.CharField(max_length=15, blank=False, null=False)
 	def __str__(self):
-			return self.estado
+		return self.estado
+
+class Permisos(models.Model):
+	permisos = models.CharField(max_length=15, blank=False, null=False)
+	def __str__(self):
+		return self.permisos
 
 class EnlaceCursos(models.Model):
 	nombre = models.CharField(max_length=30, blank=False, null=False)
@@ -19,11 +24,8 @@ class EnlaceBellbank(models.Model):
 	descripcion = models.CharField(max_length=150, blank=True, null=True)
 	logo = models.CharField(max_length=150, blank=True, null=True)
 	estado = models.ForeignKey('Estados', on_delete=models.CASCADE, blank=True, null=True)
+	permiso = models.ForeignKey('Permisos', on_delete=models.CASCADE, blank=True, null=True)
 	
 	def __str__(self):
-		return str(self.nombre)
-		 
-		
-		# if es == 'En Produccion':
-		# 	return str(self.estado)
-				
+		return str(self.estado)
+
