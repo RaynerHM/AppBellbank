@@ -1,16 +1,20 @@
 from django.shortcuts import render
 
-from .forms import FormIndex
+from .forms import FormIndex, FormSysadmin
 
 from django.contrib.auth.models import User
 from .models import EnlaceCursos, EnlaceBellbank
 
 #-- --------------------- Vista Generar Codigo --------------------- -->
-def index(request):
-	resultado = EnlaceBellbank.objects.all()
-	# print(resultado)
+def Index(request):
+	# resultado = EnlaceBellbank.objects.all()
+	# return render(request, "index.html", {'resultado': resultado})
+#--------------------------------------------------------------------------------
+	# resultado = EnlaceBellbank.objects.filter(nombre="Zimbra")
+	resultado = EnlaceBellbank.objects.filter(estado__icontains="En QA")
+	# resultado = EnlaceBellbank.objects.all().filter(estado__icontains="En Produccion")
 	return render(request, "index.html", {'resultado': resultado})
-	#return render(request, "index.html")
+
 
 def Modificar(request):
 	form = FormModificar(request.POST)
@@ -30,3 +34,9 @@ def Modificar(request):
 		"el_form": form,
 	}
 	return render(request, "modificar.html", context)
+
+def Sysadmin(request):
+	resultado = EnlaceBellbank.objects.all()
+	# print(resultado)
+	return render(request, "sysadmin.html", {'resultado': resultado})
+	#return render(request, "index.html")

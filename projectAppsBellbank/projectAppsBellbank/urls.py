@@ -19,6 +19,7 @@ from AppsBellbank import views
 
 urlpatterns = [
 	path('admin/', admin.site.urls),
-	path('', views.index, name='index'),
+	path('', views.Index, name='index'),
+	path('sysadmin', views.Sysadmin, name='Sysadmin'),
 
 ]
