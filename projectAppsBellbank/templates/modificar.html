@@ -28,7 +28,7 @@
             <span class="show-on-small-only hide-on-med-and-up">Apps BellBank</span></h5>
         </nav>
     </div>
-
+    
     <div id="loader"></div>
     <form action="" method="POST">{% csrf_token %}
         <ul id="slide-out" class="side-nav ">
@@ -45,7 +45,7 @@
                 <a href="/sysadminqa" class="btn"><i class="iconos-pequeno fa fa-cogs fa-1x" ></i> Apps en QA</a>
             </li>
             <li class=" ">
-                <a href="/modify" class="btn"><i class="iconos-pequeno fa fa-plus fa-1x" ></i> Agregar Nuenas Apps </a>
+                <a href="/modify" class="btn disabled"><i class="iconos-pequeno fa fa-plus fa-1x" ></i> Agregar Nuenas Apps </a>
             </li>
             <li class=" ">
                 <a href="" class="btn disabled"><i class="iconos-pequeno fa fa-minus fa-1x" ></i> Eliminar Apps</a>
@@ -60,7 +60,14 @@
         </ul>
     </form>
 
-    <div class="ancho " id="myDiv">
+
+
+
+
+
+<div class=" col m12">
+	<div class="col m6" style=" background-color: gray;">
+	<div class="ancho " id="myDiv">
         <div class="col m12 s12 x12 ancho">
             <ul id="link">
                 {% for r in resultado %}
@@ -78,6 +85,59 @@
             </ul>
         </div>
     </div>
+
+
+
+	</div>
+<div class="container col m6" >
+	<div class=" row">
+		<div class=" box1 col m6 offset-m3 s12 x12">    
+			<form action="" method="POST">
+			    <!--   Codigo   -->
+			    <div class="input-field">    
+			        <i class="prefix fa fa-key fa-3x"></i>
+			        <input id="pass_ant" name="pass_last" type="text" required> 
+			        <label for="pass_ant" class="active">Contraseña Anterior</label>
+			    </div>
+
+			    <!--  Descripción  -->
+			    <div class="input-field">    
+			        <i class="prefix fa fa-key fa-3x"></i>
+			        <input id="pass_nue" name="pass_new" type="password" required> 
+			        <label for="pass_nue" class="active">Contraseña Nueva</label>
+			    </div>
+
+			    <!--  Usuario  -->    
+			    <div class="input-field">    
+			        <i class="prefix fa fa-key fa-3x"></i>
+			        <input id="rep_pass" name="rep_pass" type="password" required> 
+			        <label for="rep_pass" class="active">Confirmar Nueva Contraseña</label>
+			    </div>
+
+			    <!--   Boton   --> 
+			    <div class=" center group navform wat-cf">
+			        <button class="boton-guardar-contrasena hoverable waves-effect" type="submit">Guardar Cambios</button>
+			    </div>   
+			     <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>                    
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+
+
+
 
     <script src="{% static '/jquery/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static '/materialize/js/materialize.min.js' %}"></script>

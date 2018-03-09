@@ -15,7 +15,7 @@ div.color {
 }
 
 nav {
-    background-color: #6bbcf7;
+    background-color: #008996;
     padding: 0px 9px;
     margin: 0px 10px 10px 0px;
     height: 50px;
@@ -82,12 +82,12 @@ ul li a {
     text-transform: unset;
     letter-spacing: 1px;
     text-align: left;
-    background-color: #6bbcf7;
+    background-color: #008996;
     color: black;
 }
 
 .side-nav li>a.btn:hover {
-    background-color: #47d7ff
+    background-color: rgba(0, 137, 150, 0.51);
 }
 
 #link .btn {
@@ -105,7 +105,7 @@ ul li a {
     border-radius: 5px;
     display: inline-block;
     height: 120px;
-    width: 250px;
+    width: 300px;
     padding: 5px 5px;
     margin: 20px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -158,10 +158,6 @@ img{
     cursor: pointer;
 }
 
-.active-btn {
-    background-color: #0076b7;
-}
-
 .side-nav li>a.btn {
     margin: 5px 10px;
 }
@@ -195,4 +191,57 @@ p{
     line-height: normal;
     font-weight: normal;
     font-size: 11px;
+}
+
+
+/* ------------------------------------------ */
+#loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px  #008996;
+  border-left: 10px solid rgba(10, 133, 181, 0.9);;
+  border-right: 10px solid rgba(10, 133, 181, 0.9);;
+  border-bottom: 16px  #008996;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  left: 50%;
+  top: 50%;
+ margin: -75px 0 0 -75px;
+ position: absolute;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
 }

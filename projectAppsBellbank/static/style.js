@@ -1,13 +1,4 @@
-var btnMenu = document.getElementById('informacion');
-var MostrarMenu = document.getElementById('arriba');
-
-btnMenu.addEventListener('click', function() {
-    MostrarMenu.classList.toggle('arriba');
-});
-
-/* ---------------------------------------------------------------------------------------------- */
-
-/*  ------------------------- Menu SideNav -------------------------*/
+/*  ------------------------------------------ Menu SideNav ------------------------------------------*/
 $('.deslizar').sideNav({
     menuWidth: 300, // Default is 300
     // edge: 'right', // Choose the horizontal origin
@@ -16,3 +7,14 @@ $('.deslizar').sideNav({
     onOpen: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is opened
     onClose: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is closed
 });
+/* ------------------------------------------------------------------------------------------------ */
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}

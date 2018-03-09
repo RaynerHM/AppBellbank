@@ -13,47 +13,48 @@
 
 
     <link rel="stylesheet" href="{% static '/style.css' %}">
-    <link rel="icon" href="{% static '/DBFZ.png' %}" type="image / x-icon">
+    <link rel="icon" href="{% static '/imagenes/favicon.ico' %}" type="image / x-icon">
 
 
 </head>
 
-<body>
+<body onload="myFunction()" style="margin:0;">
     <div class="col m12 s12 x12 navbar-fixed">
         <nav>
             <span class="left brand-logo text-darken-2">
               <i onclick="Materialize.showStaggeredList('#slide-out')" id="btnMenu" data-activates="slide-out" class=" deslizar icono-menu fa fa-bars fa-2x "></i>
           </span>
-            <h5 class="center-align"><span class="hide-on-small-only">APLICACIONES</span> BELLBANK</h5>
-            <!-- <h5 class="center-align"><span class="hide-on-small-only">APLICACIONES</span> </h5> -->
+            <h5 class="center-align"><span class="hide-on-small-only show-on-large">APLICACIONES BELLBANK</span> 
+            <span class="show-on-small-only hide-on-med-and-up">Apps BellBank</span></h5>
         </nav>
     </div>
 
+    <div id="loader"></div>
     <form action="" method="POST">{% csrf_token %}
         <ul id="slide-out" class="side-nav ">
             <li>
                 <i class="iconos-pequeno prefix fa fa-user-o fa-2x"></i>
             </li>
             <li class=" " name="estado" value="En Produccion" type="submit">
-                <a href="/" class="active-btn btn"><i class="iconos-pequeno fa fa-home fa-1x" ></i> Mostrar Todas</a>
+                <a href="/" class="btn"><i class="iconos-pequeno fa fa-home fa-1x" ></i> Mostrar Todas</a>
             </li>
              <li class=" ">
-                <a href="/" class="btn"><i class="iconos-pequeno fa fa-play fa-1x" ></i> Apps en Producción</a>
+                <a href="/indexpro" class="btn "><i class="iconos-pequeno fa fa-play fa-1x" ></i> Apps en Producción</a>
             </li>
             <li class=" ">
-                <a href="/" class="btn"><i class="iconos-pequeno fa fa-cogs fa-1x" ></i> Apps en QA</a>
+                <a href="/indexqa" class="btn "><i class="iconos-pequeno fa fa-cogs fa-1x" ></i> Apps en QA</a>
             </li>
         </ul>
     </form>
 
-    <div class="ancho">
+    <div class="ancho " id="myDiv">
         <div class="col m12 s12 x12 ancho">
             <ul id="link">
                 {% for r in resultado %}
                 <li class="btn">
                     <a href=" {{ r.enlace }}">
                         <div class="image">
-                            <img src="{% static 'logo.jpg' %} " alt="" style="width:70px;"> {{ r.nombre }}
+                            <img src="{% static '/imagenes/logo.jpg' %} " alt="" style="width:70px;"> {{ r.nombre }}
                         </div>
                     </a>
                     <div id="informacion" class="border_top">

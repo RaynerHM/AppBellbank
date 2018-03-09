@@ -20,8 +20,11 @@ from AppsBellbank import views
 urlpatterns = [
 	path('admin/', admin.site.urls),
 	path('', views.Index, name='index'),
-	path('sysadmin', views.IndexSysAdmin, name='Sysadmin'),
-	path('IndexSysAdminQA', views.IndexSysAdminQA, name='IndexSysAdminQA'),
-	path('IndexSysAdminPro', views.IndexSysAdminPro, name='Sysadmin'),
+	path('indexqa', views.IndexQA, name='index'),
+	path('indexpro', views.IndexPro, name='index'),
+	path('sysadmin', views.SysAdmin, name='Sysadmin'),
+	path('sysadminqa', views.SysAdminQA, name='sysadminqa'),
+	path('sysadminpro', views.SysAdminPro, name='sysadminpro'),
+	path('modify', views.Modificar, name='modify'),
 
 ]
