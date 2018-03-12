@@ -1,9 +1,8 @@
 /*  ------------------------------------------ Menu SideNav ------------------------------------------*/
 $('.deslizar').sideNav({
-    menuWidth: 300, // Default is 300
-    // edge: 'right', // Choose the horizontal origin
-    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-    draggable: true, // Choose whether you can drag to open on touch screens,
+    menuWidth: 300,
+    closeOnClick: true,
+    draggable: true,
     onOpen: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is opened
     onClose: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is closed
 });
@@ -15,6 +14,10 @@ function myFunction() {
 }
 
 function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
 }
+
+$(document).ready(function() {
+    $('select').material_select();
+});

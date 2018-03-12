@@ -24,25 +24,28 @@
             <span class="left brand-logo text-darken-2">
               <i onclick="Materialize.showStaggeredList('#slide-out')" id="btnMenu" data-activates="slide-out" class=" deslizar icono-menu fa fa-bars fa-2x "></i>
           </span>
-            <h5 class="center-align"><span class="hide-on-small-only show-on-large">APLICACIONES BELLBANK</span> 
-            <span class="show-on-small-only hide-on-med-and-up">Apps BellBank</span></h5>
+            <h5 class="center-align"><span class="hide-on-small-only show-on-large"><a href="/sysadmin" class="center-align">APLICACIONES BELLBANK</a></span>
+                <span class="show-on-small-only hide-on-med-and-up"><a href="/sysadmin"class="center-align">Apps BellBank</a></span></h5>
         </nav>
     </div>
-
-    <div id="loader"></div>
+    <div id="loader" class="progress hide-on-med-and-down">
+        <div class="indeterminate"></div>
+    </div>
+    {% comment %}
+    <div id="loader" class=" hide-on-med-and-down "></div> {% endcomment %}
     <form action="" method="POST">{% csrf_token %}
         <ul id="slide-out" class="side-nav ">
-         <li>
+            <li>
                 <i class="iconos-pequeno prefix fa fa-user-o fa-2x"></i>
             </li>
             <li class=" ">
                 <a href="/sysadmin" class="btn"><i class="iconos-pequeno fa fa-home fa-1x" ></i> Mostrar Todas</a>
             </li>
-            <li class=" " >
-                <a href="/sysadminpro" class="btn"><i class="iconos-pequeno fa fa-play fa-1x" ></i> Apps en Producción</a>
+            <li class=" ">
+                <a href="/sysadmin/pro" class="btn"><i class="iconos-pequeno fa fa-play fa-1x" ></i> Apps en Producción</a>
             </li>
             <li class=" ">
-                <a href="/sysadminqa" class="btn"><i class="iconos-pequeno fa fa-cogs fa-1x" ></i> Apps en QA</a>
+                <a href="/sysadmin/qa" class="btn"><i class="iconos-pequeno fa fa-cogs fa-1x" ></i> Apps en QA</a>
             </li>
             <li class=" ">
                 <a href="/modify" class="btn"><i class="iconos-pequeno fa fa-plus fa-1x" ></i> Agregar Nuenas Apps </a>
@@ -64,10 +67,13 @@
         <div class="col m12 s12 x12 ancho">
             <ul id="link">
                 {% for r in resultado %}
-                <li class="btn">
+                <li class="btn ">
                     <a href=" {{ r.enlace }}">
-                        <div class="image">
-                            <img src="{% static '/imagenes/logo.jpg' %} " alt="" style="width:70px;"> {{ r.nombre }}
+                        <div id="padre" class="row col s12">
+                            <div class=" col s4">
+                                <img src="{% static '/imagenes/logo.jpg' %} " alt="">
+                            </div>
+                            <div id="nombre" class="col s8">{{ r.nombre }}</div>
                         </div>
                     </a>
                     <div id="informacion" class="border_top">

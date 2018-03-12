@@ -6,31 +6,35 @@ from django.contrib.auth.models import User
 from .models import EnlaceBellbank
 
 
-#-- --------------------- Vista General para Usuario --------------------- -->
+#-- --------------------- Vistas Generales para Usuario --------------------- -->
 def Index(request):
-	resultado = EnlaceBellbank.objects.all().filter(permiso__permisos='Usuario')
+	resultado = EnlaceBellbank.objects.all().filter(permiso__permisos='Usuario'
+	).order_by('nombre')
 	return render(request, "index.html", {'resultado': resultado})
 
 def IndexQA(request):
-	resultado = EnlaceBellbank.objects.filter(estado__estado='En QA').filter(permiso__permisos='Usuario')
+	resultado = EnlaceBellbank.objects.filter(estado__estado='En QA').filter(
+		permiso__permisos='Usuario')
 	return render(request, "index.html", {'resultado': resultado})
 
 def IndexPro(request):
-	resultado = EnlaceBellbank.objects.filter(estado__estado='En Produccion').filter(permiso__permisos='Usuario')
+	resultado = EnlaceBellbank.objects.filter(estado__estado='En Produccion'
+	).filter(permiso__permisos='Usuario').order_by('nombre')
 	return render(request, "index.html", {'resultado': resultado})
 
 
-#-- --------------------- Vista para Administrador --------------------- -->
+#-- --------------------- Vistas para Administrador --------------------- -->
 def SysAdmin(request):
-	resultado = EnlaceBellbank.objects.all()
+	resultado = EnlaceBellbank.objects.all().order_by('nombre')
 	return render(request, "sysadmin.html", {'resultado': resultado})
 
 def SysAdminQA(request):
-	resultado = EnlaceBellbank.objects.filter(estado__estado='En QA')
+	resultado = EnlaceBellbank.objects.filter(estado__estado='En QA').order_by('nombre')
 	return render(request, "sysadmin.html", {'resultado': resultado})
 
 def SysAdminPro(request):
-	resultado = EnlaceBellbank.objects.filter(estado__estado='En Produccion')
+	resultado = EnlaceBellbank.objects.filter(estado__estado='En Produccion'
+	).order_by('nombre')
 	return render(request, "sysadmin.html", {'resultado': resultado})
 
 
