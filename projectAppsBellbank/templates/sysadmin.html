@@ -13,39 +13,42 @@
 
 
     <link rel="stylesheet" href="{% static '/style.css' %}">
-    <link rel="icon" href="{% static '/DBFZ.png' %}" type="image / x-icon">
+    <link rel="icon" href="{% static '/imagenes/favicon.ico' %}" type="image / x-icon">
 
 
 </head>
 
-<body>
+<body onload="myFunction()" style="margin:0;">
     <div class="col m12 s12 x12 navbar-fixed">
         <nav>
             <span class="left brand-logo text-darken-2">
               <i onclick="Materialize.showStaggeredList('#slide-out')" id="btnMenu" data-activates="slide-out" class=" deslizar icono-menu fa fa-bars fa-2x "></i>
           </span>
-            <h5 class="center-align"><span class="hide-on-small-only">APLICACIONES</span> BELLBANK</h5>
-            <!-- <h5 class="center-align"><span class="hide-on-small-only">APLICACIONES</span> </h5> -->
+            <h5 class="center-align"><span class="hide-on-small-only show-on-large"><a href="/sysadmin" class="center-align">APLICACIONES BELLBANK</a></span>
+                <span class="show-on-small-only hide-on-med-and-up"><a href="/sysadmin"class="center-align">Apps BellBank</a></span></h5>
         </nav>
     </div>
-
+    <div id="loader" class="progress hide-on-med-and-down">
+        <div class="indeterminate"></div>
+    </div>
+    {% comment %}
+    <div id="loader" class=" hide-on-med-and-down "></div> {% endcomment %}
     <form action="" method="POST">{% csrf_token %}
         <ul id="slide-out" class="side-nav ">
-         <li>
+            <li>
                 <i class="iconos-pequeno prefix fa fa-user-o fa-2x"></i>
             </li>
             <li class=" ">
-                <a href="/sysadmin" class="active-btn btn"><i class="iconos-pequeno fa fa-home fa-1x" ></i> Mostrar Todas</a>
-            </li>
-            <li class=" ">            
-            <li class=" " >
-                <a href="/IndexSysAdminPro" class="btn"><i class="iconos-pequeno fa fa-play fa-1x" ></i> Apps en Producción</a>
+                <a href="/sysadmin" class="btn"><i class="iconos-pequeno fa fa-home fa-1x" ></i> Mostrar Todas</a>
             </li>
             <li class=" ">
-                <a href="/IndexSysAdminQA" class="btn"><i class="iconos-pequeno fa fa-cogs fa-1x" ></i> Apps en QA</a>
+                <a href="/sysadmin/pro" class="btn"><i class="iconos-pequeno fa fa-play fa-1x" ></i> Apps en Producción</a>
             </li>
             <li class=" ">
-                <a href="" class="btn disabled"><i class="iconos-pequeno fa fa-plus fa-1x" ></i> Agregar Nuenas Apps </a>
+                <a href="/sysadmin/qa" class="btn"><i class="iconos-pequeno fa fa-cogs fa-1x" ></i> Apps en QA</a>
+            </li>
+            <li class=" ">
+                <a href="/modify" class="btn"><i class="iconos-pequeno fa fa-plus fa-1x" ></i> Agregar Nuenas Apps </a>
             </li>
             <li class=" ">
                 <a href="" class="btn disabled"><i class="iconos-pequeno fa fa-minus fa-1x" ></i> Eliminar Apps</a>
@@ -60,14 +63,17 @@
         </ul>
     </form>
 
-    <div class="ancho">
+    <div class="ancho " id="myDiv">
         <div class="col m12 s12 x12 ancho">
             <ul id="link">
                 {% for r in resultado %}
-                <li class="btn">
+                <li class="btn ">
                     <a href=" {{ r.enlace }}">
-                        <div class="image">
-                            <img src="{% static 'logo.jpg' %} " alt="" style="width:70px;"> {{ r.nombre }}
+                        <div id="padre" class="row col s12">
+                            <div class=" col s4">
+                                <img src="{{ MEDIA_URL }}{{ r.logo }}" alt="">
+                            </div>
+                            <div id="nombre" class="col s8">{{ r.nombre }}</div>
                         </div>
                     </a>
                     <div id="informacion" class="border_top">
