@@ -68,6 +68,30 @@
     <div class="row col m12">
         <div class="col m7">
             <div class="ancho " id="myDiv">
+                <div class="ancho ">
+                    <div class="col m12 s12 x12 ancho">
+                        <ul id="link">
+                            {% for r in resultado %}
+                            <li class="btn ">
+                                <a href=" {{ r.enlace }}">
+                                    <div id="padre" class="row col s12">
+                                        <div class=" col s4">
+                                            <img src="{% static '/imagenes/logo.jpg' %} " alt="">
+                                        </div>
+                                        <div id="nombre" class="col s8">{{ r.nombre }}</div>
+                                    </div>
+                                </a>
+                                <div id="informacion" class="border_top">
+                                    <p> {{ r.descripcion }}</p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ancho " id="myDiv">
                 <div class="col m12 s12 x12 ancho">
                     <ul id="link">
                         {% for r in resultado %}
@@ -76,6 +100,7 @@
                                 <div id="padre" class="row col s12">
                                     <div class=" col s4">
                                         <img src="{{ MEDIA_URL }}{{ r.logo }}" alt="">
+
                                     </div>
                                     <div id="nombre" class="col s8">{{ r.nombre }}</div>
                                 </div>
@@ -155,11 +180,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 
 
         <script src="{% static '/jquery/jquery-3.2.1.min.js' %}"></script>
