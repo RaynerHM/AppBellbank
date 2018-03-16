@@ -1,8 +1,7 @@
 from django import forms
-from .models import EnlaceCursos, EnlaceBellbank
+from .models import EnlaceBellbank
 
 #-- --------------------- Formulario Index ---------------------------- -->
-#-- ----- Recibir Datos ----- -->
 class FormIndex(forms.ModelForm):
 	class Meta:
 		model = EnlaceBellbank
@@ -29,16 +28,13 @@ class FormSysadmin(forms.ModelForm):
 	class Meta:
 		model = EnlaceBellbank
 		fields = ["nombre","enlace","descripcion","logo","estado"]
+
 class FormSysadminQA(forms.ModelForm):
 	class Meta:
 		model = EnlaceBellbank
 		fields = ["nombre","enlace","descripcion","logo","estado"]
+
 class FormSysadminPRO(forms.ModelForm):
 	class Meta:
 		model = EnlaceBellbank
 		fields = ["nombre","enlace","descripcion","logo","estado"]
-		
-
-# class RegFormSysadmin(forms.Form):
-# 	nombre = forms.CharField(max_length=30)
-

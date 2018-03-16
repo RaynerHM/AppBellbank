@@ -11,11 +11,8 @@
     <link rel="stylesheet" href="{% static '/materialize/css/materialize.min.css' %}" media="screen,projection">
     <link rel="stylesheet" href="{% static '/font-awesome/css/font-awesome.min.css' %}">
 
-
     <link rel="stylesheet" href="{% static '/style.css' %}">
     <link rel="icon" href="{% static '/imagenes/favicon.ico' %}" type="image / x-icon">
-
-
 </head>
 
 <body onload="myFunction()" style="margin:0;">
@@ -31,12 +28,10 @@
     <div id="loader" class="progress hide-on-med-and-down">
         <div class="indeterminate"></div>
     </div>
-    {% comment %}
-    <div id="loader" class=" hide-on-med-and-down "></div> {% endcomment %}
     <form action="" method="POST">{% csrf_token %}
         <ul id="slide-out" class="side-nav ">
-            <li>
-                <i class="iconos-pequeno prefix fa fa-user-o fa-2x"></i>
+            <li style=" background-color: #00585b; padding: 0px 9px;">
+                <h5 class="center" style="padding: 12px; margin: 0px 10px 10px 0px; color: #fff;">Clasificar</h5>
             </li>
             <li class=" ">
                 <a href="/sysadmin" class="btn"><i class="iconos-pequeno fa fa-home fa-1x" ></i> Mostrar Todas</a>
@@ -48,18 +43,8 @@
                 <a href="/sysadmin/qa" class="btn"><i class="iconos-pequeno fa fa-cogs fa-1x" ></i> Apps en QA</a>
             </li>
             <li class=" ">
-                <a href="/modify" class="btn"><i class="iconos-pequeno fa fa-plus fa-1x" ></i> Agregar Nuenas Apps </a>
+                <a href="/admin" class="btn"><i class="iconos-pequeno fa fa-plus fa-1x" ></i> Modificar Apps </a>
             </li>
-            <li class=" ">
-                <a href="" class="btn disabled"><i class="iconos-pequeno fa fa-minus fa-1x" ></i> Eliminar Apps</a>
-            </li>
-            <li class=" ">
-                <a href="" class="btn disabled"><i class="iconos-pequeno fa fa-key fa-1x" ></i> Cambiar Contraseña</a>
-            </li>
-            <li class=" ">
-                <a href="" class="btn disabled"><i class="iconos-pequeno fa fa-power-off fa-1x" ></i> Cerrar Sección</a>
-            </li>
-
         </ul>
     </form>
 

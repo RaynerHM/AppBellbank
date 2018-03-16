@@ -2,17 +2,7 @@ body {
     background-color: white;
 }
 
-.fa-bars {
-    cursor: pointer;
-}
-
-
-/*----------------- Fromulario de Generacion de Codigo -----------------*/
-
-div.color {
-    color: gray;
-    text-align: center;
-}
+/*---------- Barra de Navegacion ----------*/
 
 nav {
     background-color: #00afb5;
@@ -21,9 +11,8 @@ nav {
     height: 50px;
 }
 
-.box {
-    width: 80%;
-    margin: 60px auto;
+.fa-bars {
+    cursor: pointer;
 }
 
 .icono-menu {
@@ -32,15 +21,9 @@ nav {
     font-size: 40px;
 }
 
-.menu {
-    margin-left: -100%;
-    margin-top: 65px;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-    width: 210px;
-    height: 250px;
-}
+/*---------- Fin Barra de Navegacion ----------*/
+
+/*---------- Fin Barra de Menu ----------*/
 
 ul li a {
     border-radius: 10px;
@@ -60,12 +43,17 @@ ul li a {
     color: #fff;
 }
 
-.MostrarMenu {
-    margin-left: auto;
+.side-nav li>a.btn {
+    margin: 5px 10px;
 }
 
+.side-nav li>a.btn:hover {
+    background-color: rgba(0, 137, 150, 0.51);
+}
 
-/*----------------- Fromulario Equipos -----------------*/
+/*---------- Fin Barra de Menu ----------*/
+
+/*---------- Apps ----------*/
 
 .container {
     text-align: center;
@@ -83,15 +71,6 @@ ul li a {
     letter-spacing: 1px;
     text-align: left;
     background-color: #00afb5;
-}
-
-.side-nav li>a.btn:hover {
-    background-color: rgba(0, 137, 150, 0.51);
-}
-
-#informacion {
-    /* padding: 0px;
-    margin: 0px; */
 }
 
 #link .row {
@@ -129,6 +108,17 @@ ul li a {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
+.ancho {
+    width: 100%;
+    text-align: center;
+}
+
+p {
+    line-height: normal;
+    font-weight: normal;
+    font-size: 11px;
+}
+
 .pointer {
     cursor: default;
     border-top: 1px;
@@ -146,21 +136,6 @@ img {
     width: 45px;
 }
 
-.arriba {
-    height: 120px;
-    background-color: #fff;
-    margin-top: -70px;
-    color: black;
-    display: inline-block;
-    width: 100%;
-}
-
-.abajo {
-    height: 45px;
-    background-color: #fff;
-    margin-top: 3px;
-    color: black;
-}
 
 #link i {
     margin: 0px;
@@ -168,9 +143,7 @@ img {
     cursor: pointer;
 }
 
-.side-nav li>a.btn {
-    margin: 5px 10px;
-}
+/*---------- Fin Apps ----------*/
 
 
 /*---------- Efecto Zoom----------*/
@@ -193,124 +166,8 @@ img {
     -moz-transition-duration: 100ms;
 }
 
-.ancho {
-    width: 100%;
-    text-align: center;
-}
-
-p {
-    line-height: normal;
-    font-weight: normal;
-    font-size: 11px;
-}
-
-
-/* ------------------------------------------ */
-
-#loader {}
-
-
-/*
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px #008996;
-    border-left: 10px solid rgba(10, 133, 181, 0.9);
-    border-right: 10px solid rgba(10, 133, 181, 0.9);
-    border-bottom: 16px #008996;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-    left: 50%;
-    top: 50%;
-    margin: -75px 0 0 -75px;
-    position: absolute;
-}
-
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
- */
-
-
-/* Add animation to "page content" */
-
 #myDiv {
     display: none;
     text-align: center;
 }
-
-
-/* 
-.animate-bottom {
-    position: relative;
-    -webkit-animation-name: animatebottom;
-    -webkit-animation-duration: 1s;
-    animation-name: animatebottom;
-    animation-duration: 1s
-}
-
-@-webkit-keyframes animatebottom {
-    from {
-        bottom: -100px;
-        opacity: 0
-    }
-    to {
-        bottom: 0px;
-        opacity: 1
-    }
-}
-
-@keyframes animatebottom {
-    from {
-        bottom: -100px;
-        opacity: 0
-    }
-    to {
-        bottom: 0;
-        opacity: 1
-    } 
-
-
-}
-
-
-*/
-
-.sidebar {
-    position: fixed;
-    float: right;
-}
-
-.cent {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.file-field {
-    width: 80%;
-    text-align: center;
-}
-
-.file-field .btn {
-    width: 25%;
-    height: 35px;
-    padding-bottom: 40px;
-    padding-left: 0px;
-    padding-right: 0px;
-    text-align: center;
-}
+/*----------Fin Efecto Zoom----------*/

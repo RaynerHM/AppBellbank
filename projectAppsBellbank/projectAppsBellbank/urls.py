@@ -22,16 +22,10 @@ from django.conf.urls.static import static
 urlpatterns = [
 	path('admin/', admin.site.urls),
 	path('', views.Index, name='index'),
-	path('index/qa', views.IndexQA, name='index'),
-	path('index/pro', views.IndexPro, name='index'),
+	path('qa', views.IndexQA, name='index'),
+	path('pro', views.IndexPro, name='index'),
 	path('sysadmin', views.SysAdmin, name='Sysadmin'),
 	path('sysadmin/qa', views.SysAdminQA, name='sysadminqa'),
 	path('sysadmin/pro', views.SysAdminPro, name='sysadminpro'),
-	path('modify', views.Modificar, name='modify'),
-<<<<<<< HEAD
-	#path('/static/media', django.views.static.serve, name='/static/media'),
-=======
->>>>>>> cc4e9215ea6bfbebbe16f4d07a74abe2cb69914d
 
-]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-#django.views.static.serve
+]
