@@ -16,32 +16,58 @@
 </head>
 
 <body onload="myFunction()" style="margin:0;">
-    <div class="col m12 s12 x12 navbar-fixed">
-        <nav>
-            <span class="left brand-logo text-darken-2">
-              <i onclick="Materialize.showStaggeredList('#slide-out')" id="btnMenu" data-activates="slide-out" class=" deslizar icono-menu fa fa-bars fa-2x "></i>
-          </span>
-            <h5 class="center-align"><span class="hide-on-small-only show-on-large"><a href="/" class="center-align">APLICACIONES BELLBANK</a></span>
-                <span class="show-on-small-only hide-on-med-and-up"><a href="/"class="center-align">Apps BellBank</a></span></h5>
-        </nav>
-    </div>
     <div id="loader" class="progress hide-on-med-and-down">
         <div class="indeterminate"></div>
     </div>
+    <div class=" navbar-fixed">
+        <nav class="">
+            <div class="nav-wrapper ">
+                <!-- --- --- Boton Menu Lado Izquierdo --- --- -->
+                <span class="left brand-logo text-darken-2">
+                <i onclick="Materialize.showStaggeredList('#slide-out')" id="btnMenu" data-activates="slide-out" class=" deslizar icono-menu fa fa-bars fa-2x "></i>
+            </span>
+                <!-- --- --- Fin Boton Menu Lado Izquierdo --- --- -->
+
+
+                <div class="brand-logo center">
+                    <h5 class="center-align">
+                        <span class="hide-on-small-only show-on-large">
+                        <a href="{% url 'index' %}" class="center-align">APLICACIONES BELLBANK</a>
+                    </span>
+                        <span class="show-on-small-only hide-on-med-and-up">
+                        <a href="{% url 'index' %}" class="center-align">Apps BellBank</a>
+                    </span>
+                    </h5>
+                </div>
+
+                <!-- --- --- Todo los que se muestra en el Menu del lado Derecho --- --- -->
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <form action="" method="GET">
+                            <input class="search1" type="search" name="app" placeholder="Buscar Aplicación">
+                            <button class="boton btn" type="submit">
+                            <i id="search" class="fa fa-search"></i>Buscar</button>
+                        </form>
+                    </li>
+                </ul>
+
+
+                <!-- --- --- Fin todo los que se muestra en el Menu del lado Derecho --- --- -->
+            </div>
+        </nav>
+    </div>
+
     <form action="" method="POST">{% csrf_token %}
         <ul id="slide-out" class="side-nav ">
             <li style=" background-color: #00585b; padding: 0px 9px;">
                 <h5 class="center" style="padding: 12px; margin: 0px 10px 10px 0px; color: #fff;">Clasificar</h5>
-            </li>
-            <li class=" ">
-                <a href="/" class="btn"><i class="iconos-pequeno fa fa-home fa-1x" ></i> Mostrar Todas</a>
-            </li>
-            <li class=" ">
-                <a href="/pro" class="btn"><i class="iconos-pequeno fa fa-play fa-1x" ></i> Apps en Producción</a>
-            </li>
-            <li class=" ">
-                <a href="/qa" class="btn"><i class="iconos-pequeno fa fa-cogs fa-1x" ></i> Apps en QA</a>
-            </li>
+
+                {% for d in departamento %}
+                <li class=" ">
+                    <a class="btn" href="/{{d.departamento}}">{{d.departamento}}</a>
+                </li>
+                {% endfor %}
+
         </ul>
     </form>
 
@@ -58,8 +84,9 @@
                             <div id="nombre" class="col s8">{{ r.nombre }}</div>
                         </div>
                     </a>
-                    <div id="informacion" class="border_top">
-                        <p> {{ r.descripcion }}</p>
+                    <hr>
+                    <div id="informacion" class="">
+                        <p> {{ r.descripcion }} </p>
                     </div>
                 </li>
                 {% endfor %}

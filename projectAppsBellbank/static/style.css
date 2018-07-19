@@ -2,6 +2,12 @@ body {
     background-color: white;
 }
 
+.progress {
+    margin: 0px;
+    background-color: #0089ec;
+}
+
+
 /*---------- Barra de Navegacion ----------*/
 
 nav {
@@ -9,6 +15,12 @@ nav {
     padding: 0px 9px;
     margin: 0px 10px 10px 0px;
     height: 50px;
+}
+
+nav,
+nav .nav-wrapper i {
+    height: 50px;
+    line-height: 40px;
 }
 
 .fa-bars {
@@ -21,9 +33,40 @@ nav {
     font-size: 40px;
 }
 
-/*---------- Fin Barra de Navegacion ----------*/
+nav .boton {
+    margin: 0px 20px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    height: 40px;
+    background-color: #3ad6bf;
+}
 
-/*---------- Fin Barra de Menu ----------*/
+input[type=search]:not(.browser-default) {
+    border-bottom: 1px solid #f9dada;
+    width: 250px;
+}
+
+input[type=search]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+    -webkit-box-shadow: 0 1px 0 0 #fff;
+    box-shadow: 0 1px 0 0 #fff;
+}
+
+#search {
+    line-height: 0;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    input[type=search]:not(.browser-default) {
+        width: 96%;
+        margin: 0 0 0 5px;
+        padding-top: 30px;
+    }
+}
+
+
+/*---------- Fin Barra de Navegacion ----------*/
 
 ul li a {
     border-radius: 10px;
@@ -41,19 +84,25 @@ ul li a {
 
 .side-nav li>a>i {
     color: #fff;
+    margin: 0 15px 0 0;
 }
 
 .side-nav li>a.btn {
-    margin: 5px 10px;
+    margin: 2px 5px;
 }
 
 .side-nav li>a.btn:hover {
     background-color: rgba(0, 137, 150, 0.51);
 }
 
-/*---------- Fin Barra de Menu ----------*/
 
 /*---------- Apps ----------*/
+
+hr {
+    border-width: 1px 0 0 0;
+    margin-top: 0px;
+    width: 220px;
+}
 
 .container {
     text-align: center;
@@ -68,7 +117,7 @@ ul li a {
 
 .btn {
     text-transform: unset;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     text-align: left;
     background-color: #00afb5;
 }
@@ -124,24 +173,17 @@ p {
     border-top: 1px;
 }
 
-.border_top {
-    border-top-width: 0.5px;
-    border-top-style: groove;
-    padding-left: 5px;
-    width: 100%;
-}
-
 img {
     text-align: left;
     width: 45px;
 }
-
 
 #link i {
     margin: 0px;
     padding-left: 20px;
     cursor: pointer;
 }
+
 
 /*---------- Fin Apps ----------*/
 
@@ -170,4 +212,6 @@ img {
     display: none;
     text-align: center;
 }
+
+
 /*----------Fin Efecto Zoom----------*/
